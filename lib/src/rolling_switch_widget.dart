@@ -86,7 +86,9 @@ class RollingSwitch extends StatefulWidget {
   })  : assert(height >= 50.0 && innerSize >= 40.0),
         rollingInfoLeft = rollingInfoLeft,
         rollingInfoRight = rollingInfoRight,
-        super(key: key);
+        super(key: key) {
+          print("HelloWorld!");
+        }
 
   /// [onChanged] is called when the user toggles the switch left or right
   final Function(bool) onChanged;
