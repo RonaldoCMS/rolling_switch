@@ -3,44 +3,13 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:rolling_switch/src/transform/transform_text.dart';
-import 'package:tools_tkmonkey/tools_tkmonkey_flutter.dart';
+import 'package:tools_tkmonkey/tools_tkmonkey.dart';
 
 import 'controller/rolling_controller.dart';
 import 'info/rolling_info.dart';
 import 'transform/transform_icon.dart';
 import 'utils/drag_utils.dart';
 import 'widget/circular_container.dart';
-
-/// {@template rolling_switch_widget}
-///
-/// The main widget to show a rolling widget
-/// Customable and attractive Switch button.
-///
-/// ```dart
-/// RollingSwitch.icon(
-///   onChanged: (bool state) {
-///     print('turned ${(state) ? 'on' : 'off'}');
-///   },
-///   rollingInfoRight: const RollingIconInfo(
-///     icon: Icons.flag,
-///     text: Text('Flag'),
-///   ),
-///   rollingInfoLeft: const RollingIconInfo(
-///     icon: Icons.check,
-///     backgroundColor: Colors.grey,
-///     text: Text('Check'),
-///   ),
-/// )
-/// ```
-///
-/// The only required value is:
-/// * [onChanged] is called when the user toggles the switch left or right
-///
-/// Available constructors:
-/// * RollingSwitch.icon: Create a Rolling with flutter icons
-/// * RollingSwitch.widget: Create a Rolling with custom widget
-///
-/// {@endtemplate}
 
 class RollingSwitch extends StatefulWidget {
   const RollingSwitch.icon({
@@ -86,9 +55,7 @@ class RollingSwitch extends StatefulWidget {
   })  : assert(height >= 50.0 && innerSize >= 40.0),
         rollingInfoLeft = rollingInfoLeft,
         rollingInfoRight = rollingInfoRight,
-        super(key: key) {
-          print("HelloWorld!");
-        }
+        super(key: key);
 
   /// [onChanged] is called when the user toggles the switch left or right
   final Function(bool) onChanged;
@@ -166,6 +133,7 @@ class _RollingSwitchState extends State<RollingSwitch>
 
   @override
   Widget build(BuildContext context) {
+    print("Hello World");
     return GestureDetector(
       onTap: widget.enableDrag
           ? null
